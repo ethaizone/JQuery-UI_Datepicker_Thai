@@ -1,12 +1,12 @@
-#JQuery UI - Datepicker พ.ศ. ไทย
-Credit เวอร์ชั่น 1.8.10 โดยคุณ KRISS http://www.anassirk.com/articles/1
-สำหรับคนมีปัญหา Datepicker ไม่รองรับ พ.ศ.ไทย 
-วิธีใช้อ่านที่เว็บที่มาได้เลยครับ
+#JQuery UI - Datepicker เธ.เธจ. เนเธ—เธข
+Credit เน€เธงเธญเธฃเนเธเธฑเนเธ 1.8.10 เนเธ”เธขเธเธธเธ“ KRISS http://www.anassirk.com/articles/1
+เธชเธณเธซเธฃเธฑเธเธเธเธกเธตเธเธฑเธเธซเธฒ Datepicker เนเธกเนเธฃเธญเธเธฃเธฑเธ เธ.เธจ.เนเธ—เธข 
+เธงเธดเธเธตเนเธเนเธญเนเธฒเธเธ—เธตเนเน€เธงเนเธเธ—เธตเนเธกเธฒเนเธ”เนเน€เธฅเธขเธเธฃเธฑเธ
 
-## Howto manual Patch แบบกากๆ
-1. เพิ่ม  isBuddhist: false ต่อท้าย yearSuffix: "" (ค่า Default)
-2. สร้างfuncใหม่ _yearOffset: function (a) { if (this._get(a, "isBuddhist")) return 543; return 0 } ต่อท้ายfunc  _daylightSavingAdjust
-3. เรียก _yearOffset ต่อหลังจากการเรียกใช้ _getFormatConfig ทุกอัน (เพิ่มเป็น parameter ที่ 4) หรือจำว่าเพิ่มใน func formatDate กับ parseDate ทุกตัวก็ได้
-4. เรียก _yearOffset ไปบวกค่า c กับ b ที่อยู่ภายใน <span class="ui-datepicker-year">
-5. ใน func formatDate เพิ่ม parameter ตัวที่ 4 แล้ว เป็น z แล้วหาช่วงที่จัดการ ปี เพิ่ม c -= z;
-6. ใน func parseDate เพิ่ม parameter ตัวที่ 4 แล้ว เป็น z แล้วหา case "y" ดูเช็คเงื่อนไขตัวแรกเลย ในช่วง True ให้เพิ่ม  +z ต่อท้าย b.getFullYear() 
+## Howto manual Patch เนเธเธเธเธฒเธเน
+1. เน€เธเธดเนเธก  isBuddhist: false เธ•เนเธญเธ—เนเธฒเธข yearSuffix: "" (เธเนเธฒ Default)
+2. เธชเธฃเนเธฒเธfuncเนเธซเธกเน _yearOffset: function (a) { if (this._get(a, "isBuddhist")) return 543; return 0 } เธ•เนเธญเธ—เนเธฒเธขfunc  _daylightSavingAdjust
+3. เน€เธฃเธตเธขเธ _yearOffset เธ•เนเธญเธซเธฅเธฑเธเธเธฒเธเธเธฒเธฃเน€เธฃเธตเธขเธเนเธเน _getFormatConfig เธ—เธธเธเธญเธฑเธ (เน€เธเธดเนเธกเน€เธเนเธ parameter เธ—เธตเน 4) เธซเธฃเธทเธญเธเธณเธงเนเธฒเน€เธเธดเนเธกเนเธ func formatDate เธเธฑเธ parseDate เธ—เธธเธเธ•เธฑเธงเธเนเนเธ”เน
+4. เน€เธฃเธตเธขเธ _yearOffset เนเธเธเธงเธเธเนเธฒ c เธเธฑเธ b เธ—เธตเนเธญเธขเธนเนเธ เธฒเธขเนเธ <span class="ui-datepicker-year">
+5. เนเธ func formatDate เน€เธเธดเนเธก parameter เธ•เธฑเธงเธ—เธตเน 4 เนเธฅเนเธง เน€เธเนเธ z เนเธฅเนเธงเธซเธฒเธเนเธงเธเธ—เธตเนเธเธฑเธ”เธเธฒเธฃ เธเธต เน€เธเธดเนเธก c -= z;
+6. เนเธ func parseDate เน€เธเธดเนเธก parameter เธ•เธฑเธงเธ—เธตเน 4 เนเธฅเนเธง เน€เธเนเธ z เนเธฅเนเธงเธซเธฒ case "y" เธ”เธนเน€เธเนเธเน€เธเธทเนเธญเธเนเธเธ•เธฑเธงเนเธฃเธเน€เธฅเธข เนเธเธเนเธงเธ True เนเธซเนเน€เธเธดเนเธก  +z เธ•เนเธญเธ—เนเธฒเธข b.getFullYear() 
