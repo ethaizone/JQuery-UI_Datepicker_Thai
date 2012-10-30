@@ -19,7 +19,7 @@ Credit เวอร์ชั่น 1.8.10 โดยคุณ KRISS http://www.an
 *ในกรณีตัวแปรเดือน เป็น b (ค่า parameterที่ 2 ของ formatDate)*
 
 
-## Memo (for Editplus - Find wirh Regex)
+## Memo (for Editplus - Find with Regex)
 *Step: 3*
 Find:
 ,((\$|this)(\.[a-z]+)?)\._getFormatConfig\(([a-z])\)
